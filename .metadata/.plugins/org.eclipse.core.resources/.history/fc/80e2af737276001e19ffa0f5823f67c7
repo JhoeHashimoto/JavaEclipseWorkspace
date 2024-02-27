@@ -1,0 +1,64 @@
+package array_list32;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Programagfsdgsd {
+
+	public static void main(String[] args) {
+	 
+	        Scanner scanner = new Scanner(System.in);
+	        ArrayList<Produto> listaProdutos = new ArrayList<>();
+
+	        int id;
+	        double preco;
+	        double quantidade;
+	        String nome;
+	        String hasCategoria;
+	        CategoriaProduto categoria = null;
+	        int categoriaId;
+	        String categoriaNome;
+	        
+	        for (int i = 1; i <= 5; i++) {
+	            System.out.println("Cadastro do Produto " + i);
+	            System.out.print("ID: ");
+	            id = scanner.nextInt();
+	            scanner.nextLine(); // Consume newline
+	            System.out.print("Nome: ");
+	            nome = scanner.nextLine();
+	            System.out.print("Preço: ");
+	            preco = scanner.nextDouble();
+	            System.out.print("Quantidade: ");
+	            quantidade = scanner.nextDouble();
+
+	            // Verifica se o produto tem uma categoria
+	            System.out.print("O produto tem uma categoria? (S/N): ");
+	            hasCategoria = scanner.next();
+
+	          
+	            if (hasCategoria.equals("S")) {
+	                System.out.print("ID da Categoria: ");
+	                categoriaId = scanner.nextInt();
+	                scanner.nextLine(); // Consume newline
+	                System.out.print("Nome da Categoria: ");
+	                categoriaNome = scanner.nextLine();
+	                categoria = new CategoriaProduto(categoriaId, categoriaNome);
+	            }
+
+	            Produto produto = new Produto(id, nome, preco, quantidade, categoria);
+	            listaProdutos.add(produto);
+	        }
+
+	        System.out.println("Lista de Produtos e suas Categorias (se houver):");
+	        for (Produto produto : listaProdutos) {
+	            System.out.print(produto.exibirNomePreco());
+	            if (produto.getCategoria() != null) {
+	                System.out.println(", Categoria: " + produto.getCategoria().getNome());
+	            } else {
+	                System.out.println();
+	            }
+	        }
+
+	        scanner.close();
+	    }
+	}

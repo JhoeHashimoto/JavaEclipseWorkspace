@@ -1,0 +1,117 @@
+package array_list32;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.IOException;
+
+public class ProgramaProdutoCategoria {
+
+	public static void main(String[] args) {
+		
+		Scanner ler = new Scanner(System.in);
+		
+		ArrayList<Produto> listaProdutos = new Arraylist<>();
+		
+		int id;
+		String nome;
+		Double preco;
+		Double quantidade;
+		CategoriaProduto categoria;
+		String possuiCategoria;
+		int opcao;
+		int indexProduto;
+		int id_produto = 0;
+		int id_categoria;
+		
+		do {
+			System.out.printf("===> Sistema de Cadastro de Clientes <===\n\n");
+	           System.out.printf("Escolha uma opção:\n");          
+	           System.out.printf("1 - Incluir \n" +
+	                             "2 - Atualizar \n" +
+	                             "3 - Excluir \n" +
+	                             "4 - Exibir \n" +
+	                             "5 - Sair\n\n");
+
+
+	           System.out.printf("Digite a opção desejada: ");
+	           opcao = ler.nextInt();
+	           
+	           if (opcao == 1) {
+	        	   
+	           Produto produto = new Produto();
+		
+	           id_produto++;
+	           produto.setId(id_produto);
+	           
+	           System.out.println("Digite o nome do produto: ");
+	           nome = ler.next();
+	           
+	           System.out.println("Digite o preco: ");
+	           preco = ler.nextDouble();
+	           
+	           System.out.println("Digite a quantidade: ");
+	           quantidade = ler.nextDouble();
+	           
+	           System.out.println("Digite se o produto possui categoria: ");
+	           possuiCategoria = ler.next();
+	           
+	           		if (possuiCategoria.equals("S")) {
+	        	   
+	           			CategoriaProduto categoria = new CategoriaProduto();
+	        	   
+		           		System.out.println("Digite o id da categoria: ");
+		           		categoria.setId(ler.nextInt());
+		        	   
+		           		System.out.println("Digite o nome da categoria: ");
+		           		categoria.setNome(ler.next());
+		        	   
+		           		categoria.setId(id_categoria);
+		        	   
+		           		produto.setCategoria(categoria);
+		        	   
+		           }
+		           
+		           	else {
+		        	   produto.setCategoria(null);
+		           }
+		           
+	           			listaProdutos.add(produto);
+		           
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		ler.close();
+	}
+
+		}
+	}
+}

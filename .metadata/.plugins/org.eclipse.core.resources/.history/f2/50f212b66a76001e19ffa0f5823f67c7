@@ -1,0 +1,62 @@
+package array_list32;
+
+public class Produto {
+	private int id;
+	private String nome;
+	private Double preco;
+	private Double quantidade;
+	private CategoriaProduto categoria;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public Double getPreco() {
+		return preco;
+	}
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+	public Double getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(Double quantidade) {
+		this.quantidade = quantidade;
+	}
+	public CategoriaProduto getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	
+	
+	public Produto() {
+		
+	}
+	public Produto(int id, String nome, double preco, double quantidade, Categoria categoria) {
+		this.id = id;
+		this.nome = nome;
+		this.preco = preco;
+		this.quantidade = quantidade;
+		this.categoria = categoria;
+	}
+	
+	public String exibirNomePreco() {
+		return ("ID: " + this.id + "Nome: " + this.nome + "Preco: " + this.preco);
+	}
+	
+	public String exibirNomeQuantiade() {
+		return ("ID: " + this.id + "Nome: " + this.nome + "Quantidade: " + this.quantidade);
+	}
+	
+	}

@@ -1,0 +1,207 @@
+package array_list32;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.IOException;
+
+public class ProgramaProdutoCategoria {
+
+	public static void main(String[] args) {
+		
+		Scanner ler = new Scanner(System.in);
+		
+		ArrayList<Produto> listaProdutos = new Arraylist<>();
+		
+		int id;
+		String nome;
+		Double preco;
+		Double quantidade;
+		CategoriaProduto categoria;
+		String possuiCategoria;
+		int opcao;
+		int indexProduto;
+		int id_produto = 0;
+		int id_categoria;
+		Produto prod;
+		
+		do {
+			System.out.printf("===> Sistema de Cadastro de Clientes <===\n\n");
+	           System.out.printf("Escolha uma opção:\n");          
+	           System.out.printf("1 - Incluir \n" +
+	                             "2 - Atualizar \n" +
+	                             "3 - Excluir \n" +
+	                             "4 - Exibir \n" +
+	                             "5 - Sair\n\n");
+
+
+	           System.out.printf("Digite a opção desejada: ");
+	           opcao = ler.nextInt();
+	           
+	           if (opcao == 1) {
+	        	   
+	        	   Produto produto = new Produto();
+		
+	        	   id_produto++;
+	        	   produto.setId(id_produto);
+	           
+	        	   System.out.println("Digite o nome do produto: ");
+	        	   nome = ler.next();
+	           
+	        	   System.out.println("Digite o preco: ");
+	        	   preco = ler.nextDouble();
+	           
+	        	   System.out.println("Digite a quantidade: ");
+	        	   quantidade = ler.nextDouble();
+	           
+	        	   System.out.println("Digite se o produto possui categoria: ");
+	        	   possuiCategoria = ler.next();
+	           
+	           		if (possuiCategoria.equals("S")) {
+	        	   
+	           			CategoriaProduto categ = new CategoriaProduto();
+	        	   
+		           		System.out.println("Digite o id da categoria: ");
+		           		categ.setId(ler.nextInt());
+		        	   
+		           		System.out.println("Digite o nome da categoria: ");
+		           		categ.setNome(ler.next());
+		        	   
+		           		produto.setCategoria(categ);
+		        	   
+		           }
+		           
+		           	else {
+		        	   produto.setCategoria(null);
+		           }
+		           
+	           			listaProdutos.add(produto);
+	           			
+	           			System.out.println("Produto cadastrado com sucesso! ");
+	           			System.in.read();
+	           }
+		        
+	           else if (opcao == 2) {
+	        	   for (Produto p: listaProdutos) {
+	        		   System.out.println(p.exibirNomePreco());
+	        		   
+	        		   System.out.println("Digite o ID do produto que você deseja atualizar: ");
+	        		   id=ler.nextInt();
+	        		   
+	        		   indexProduto = -1;
+	        		for (Produto p: listaProdutos) {
+	        			  if (p.getId() == id)
+	        				   indexProduto = listaProdutos.indexOf(p);
+	        			   		break;
+	        		   }
+	        	   }
+	        	   if (indexProduto != -1) {
+	        		   prod = listaProdutos.get(indexProduto);
+	        		   
+	        		   System.out.print("Digite o seu novo nome: ");
+	                   prod.setNome(ler.next());
+	                   
+	                   System.out.print("Digite a sua nova preco: ");
+	                   prod.setPreco(ler.nextDouble());
+	                   
+	                   System.out.print("Digite o seu novo quantidade: ");
+	                   prod.setQuantidade(ler.nextDouble());
+	                   
+	                   System.out.printf("Produto atualizado com sucesso!");
+
+	        	   }
+	        	   
+	        	   else {
+	        		   System.out.println("Produto não encontrado! ");
+	        		   
+	        	   }
+	        	   System.in.read();
+	        	   
+	           }
+	           
+	           else if (opcao == 3) {
+	        	   for (Produto p: listaProdutos) {
+	        		   System.out.println(p.exibirNomeQuantiade());
+	        	   }
+	        	   
+	        	   System.out.print("Digite o ID do cliente que você deseja excluir: ");
+	               id = ler.nextInt();
+	               
+	               indexProduto = -1;
+	               for(Produto p: listaProdutos) {
+	                   if (p.getId() == id) {
+	                       indexProduto = listaProdutos.indexOf(p);
+	                       break;
+	                   }
+	               }
+	               
+	               if (indexProduto != -1) {                              
+	                   listaProdutos.remove(indexProduto);
+	                   
+	                   System.out.printf("Produto excluído com sucesso!");
+	               }
+	               else {
+	                   System.out.printf("Produto não encontrado!");
+	               }
+	               System.in.read();
+	               
+	           }
+	           
+	           else if (opcao ==4) {
+	        	   for(Produto p: listaProdutos) {
+	                   System.out.println(p.exibirNomePreco());
+	                   
+	                   if (c.getConta() != null)
+	                       System.out.println(c.exibirDadosConta());
+	               }
+	               
+	               System.in.read();
+	           }
+	           
+	        }while( (opcao >= 1) && (opcao <= 4) );
+	    }
+	}
+
+
+	           
+	           
+	           
+	           
+	        	   		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		ler.close();
+	}
+
+		}
+	}
+}

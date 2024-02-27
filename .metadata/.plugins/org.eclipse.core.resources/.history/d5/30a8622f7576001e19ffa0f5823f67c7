@@ -1,0 +1,31 @@
+package array_list32;
+
+public class CategoriaProduto {
+	private int id;
+	private String nome;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	
+	
+	
+	public CategoriaProduto() {
+		
+	}
+	public String CategoriaProduto(int id, String nome) {
+		return ("ID: " + this.id + "Nome: " + this.nome);
+	}
+}
+
+

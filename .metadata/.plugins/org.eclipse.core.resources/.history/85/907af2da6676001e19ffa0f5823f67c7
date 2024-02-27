@@ -1,0 +1,20 @@
+package array_list32;
+
+public class Produto {
+	private int id;
+	private String nome;
+	private Double preco;
+	private Double quantidade;
+	private Categoria categoria;
+	
+	
+	public Produto() {
+		
+	}
+	public Produto(int id, String nome, double preco, double quantidade, Categoria categoria) {
+		this.id = id;
+		this.nome = nome;
+		this.preco = preco;
+		this.quantidade = quantidade;
+		this.categoria = categoria;
+	}

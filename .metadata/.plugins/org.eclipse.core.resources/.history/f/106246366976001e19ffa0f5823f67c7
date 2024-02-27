@@ -1,0 +1,48 @@
+package array_list32;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class ProgramaProdutoCategoria {
+
+	public static void main(String[] args) {
+		
+		Scanner ler = new Scanner(System.in);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		ler.close();
+	}
+
+}
